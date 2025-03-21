@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-const allPosts = await Astro.glob('../posts/*.md');
-const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+import Tags from '../../components/Tags.astro';
 const pageTitle = "Índice de etiquetas";
 ---
 <style>
@@ -31,5 +30,14 @@ const pageTitle = "Índice de etiquetas";
     }
   </style>
 <BaseLayout pageTitle={pageTitle}>
-    <div class="tags">{tags.map((tag) => <p class="tag"><a href={"tag/"+tag} >{tag}</a></p>)}</div>
+  <Tags />
 </BaseLayout>
+<script>
+  const tags = document.querySelectorAll('.tag');
+  tags.forEach(tag=>{
+    tag.addEventListener('click',()=>{
+        const ancore = tag.querySelector('a');
+        window.location.href= window.location.href+`${ancore?.textContent}`
+    })
+  })
+</script>
