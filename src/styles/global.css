@@ -50,7 +50,6 @@ html {
 .nav-links a {
   display: block;
   text-align: center;
-  padding: 10px 0;
   text-decoration: none;
   font-size: 1rem;
   font-weight: bold;
@@ -76,7 +75,6 @@ html {
 
   .nav-links a {
     display: inline-block;
-    padding: 15px 20px;
   }
 
   .hamburger {

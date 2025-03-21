@@ -1,17 +1,13 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: Mi tercera publicación en el blog
-author: Alumno de Astro
+author: Kevin Gómez
 description: "Tuve algunos problemas, pero preguntar en la comunidad me ayudó mucho."
 image:
     url: "https://docs.astro.build/assets/rays.webp"
     alt: "Miniatura de los rayos de Astro."
 pubDate: 2022-07-15
 tags: ["astro", "aprender en público", "contratiempos", "comunidad"]
----
-[atrás](http://localhost:4321/blog/)
-[post 1](http://localhost:4321/posts/post-1)
-[post 2](http://localhost:4321/posts/post-2)
-
 ---
 
 No siempre ha sido fácil, pero disfruto construyendo con Astro. Además, la [comunidad de Discord](https://astro.build/chat) es muy amable y servicial.

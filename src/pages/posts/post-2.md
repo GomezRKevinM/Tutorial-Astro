@@ -1,6 +1,7 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: Mi segunda publicación en el blog
-author: Alumno de Astro
+author: Kevin Gómez
 description: "Después de aprender un poco de Astro, ¡no podía parar!"
 image:
     url: "https://docs.astro.build/assets/arc.webp"
@@ -8,5 +9,5 @@ image:
 pubDate: 2025-03-14
 tags: ["astro", "bloguear", "aprender en público", "éxitos"]
 ---
-[atrás](http://localhost:4321/blog/)
+
 Después de una exitosa primera semana aprendiendo Astro, decidí probar un poco más. Escribí e importé un pequeño componente de memoria.

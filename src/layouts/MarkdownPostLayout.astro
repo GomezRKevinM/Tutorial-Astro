@@ -1,0 +1,57 @@
+---
+import BaseLayout from './BaseLayout.astro';
+const { frontmatter } = Astro.props;
+const allPosts = await Astro.glob('../pages/posts/*.md');
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+---
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Astro | {frontmatter.title}</title>
+    <style>
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        img{
+            border-radius: 4px;
+            box-shadow: #333 1px 1px 5px;
+        }
+        a {
+        color: #00539F;
+        }
+    
+        .tags {
+        display: flex;
+        flex-wrap: wrap;
+        }
+    
+        .tag {
+        margin: 0.25em;
+        border: dotted 1px #a1a1a1;
+        border-radius: .5em;
+        padding: .5em 1em;
+        font-size: 1.15em;
+        background-color: #F8FCFD;
+        }
+        .tag > a{
+            text-decoration: none;
+        }
+        .tag:hover{
+            border: 1px dotted #4c1d95;
+        }
+    </style>
+</head>
+<BaseLayout pageTitle={frontmatter.title}>
+<a href="http://localhost:4321/blog/">atrás</a>
+<p>{frontmatter.pubDate.toString().slice(0,10)}</p>
+<p><em>{frontmatter.description}</em></p>
+<p>Escrito por: {frontmatter.author}</p>
+<img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+<div class="tags">
+    {tags.map((tag) => (
+      <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+    ))}
+  </div>
+<slot />
+</BaseLayout>
+
+
